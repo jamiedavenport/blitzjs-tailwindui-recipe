@@ -2,4 +2,8 @@
 
 ## Getting Started
 
-TODO
+Within your BlitzJS project, run:
+
+```bash
+blitz install jamiedavenport/blitzjs-tailwindui-recipe
+```
