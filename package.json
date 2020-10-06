@@ -1,7 +1,7 @@
 {
   "name": "blitzjs-tailwindui-recipe",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "author": "Jamie Davenport",
   "repository": {
     "type": "git",
