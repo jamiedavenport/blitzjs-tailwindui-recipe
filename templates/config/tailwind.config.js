@@ -3,5 +3,5 @@ module.exports = {
   purge: ["{app,pages}/**/*.{js,jsx,ts,tsx}"],
   theme: {},
   variants: {},
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/ui")],
+};

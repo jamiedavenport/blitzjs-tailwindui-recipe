@@ -12,11 +12,11 @@ export default RecipeBuilder()
   .addAddDependenciesStep({
     stepId: "addDeps",
     stepName: "Add npm dependencies",
-    explanation: `Tailwind CSS requires a couple of dependencies to get up and running.
-We'll install the Tailwind library itself, as well as PostCSS for removing unused styles from our production bundles.`,
+    explanation: `Tailwind CSS requires a couple of dependencies to get up and running.`,
     packages: [
       { name: "tailwindcss", version: "1" },
       { name: "postcss-preset-env", version: "latest", isDevDep: true },
+      { name: "@tailwindcss/ui", version: "latest" },
     ],
   })
   .addNewFilesStep({
