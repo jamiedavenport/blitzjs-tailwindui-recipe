@@ -49,4 +49,39 @@ These config files can be extended for additional customization, but for now we'
       return addImport(program, stylesImport);
     },
   })
+  .addTransformFilesStep({
+    stepId: "addInterFont",
+    stepName: "Add Inter Font",
+    explanation: `Tailwind UI examples are built with the Inter font so we'll add it here to ensure your app has the same look and feel`,
+    singleFileSearch: paths.document(),
+    transform(program: Collection<j.Program>) {
+      program.findJSXElements("DocumentHead").replaceWith((nodePath) => {
+        return j.jsxElement(
+          j.jsxOpeningElement(j.jsxIdentifier("DocumentHead")),
+          j.jsxClosingElement(j.jsxIdentifier("DocumentHead")),
+          [
+            j.jsxElement(
+              j.jsxOpeningElement(
+                j.jsxIdentifier("link"),
+                [
+                  j.jsxAttribute(
+                    j.jsxIdentifier("rel"),
+                    j.jsxText("stylesheet")
+                  ),
+                  j.jsxAttribute(
+                    j.jsxIdentifier("href"),
+                    j.jsxText("https://rsms.me/inter/inter.css")
+                  ),
+                ],
+                true
+              ),
+              null,
+              []
+            ),
+          ]
+        );
+      });
+      return program;
+    },
+  })
   .build();
