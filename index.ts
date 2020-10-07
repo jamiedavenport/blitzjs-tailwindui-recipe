@@ -66,11 +66,11 @@ These config files can be extended for additional customization, but for now we'
                 [
                   j.jsxAttribute(
                     j.jsxIdentifier("rel"),
-                    j.jsxText("stylesheet")
+                    j.literal("stylesheet")
                   ),
                   j.jsxAttribute(
                     j.jsxIdentifier("href"),
-                    j.jsxText("https://rsms.me/inter/inter.css")
+                    j.literal("https://rsms.me/inter/inter.css")
                   ),
                 ],
                 true
