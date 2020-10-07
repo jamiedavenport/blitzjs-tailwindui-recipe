@@ -60,6 +60,7 @@ These config files can be extended for additional customization, but for now we'
           j.jsxOpeningElement(j.jsxIdentifier("DocumentHead")),
           j.jsxClosingElement(j.jsxIdentifier("DocumentHead")),
           [
+            j.jsxText("\n"),
             j.jsxElement(
               j.jsxOpeningElement(
                 j.jsxIdentifier("link"),
@@ -78,6 +79,7 @@ These config files can be extended for additional customization, but for now we'
               null,
               []
             ),
+            j.jsxText("\n"),
           ]
         );
       });
