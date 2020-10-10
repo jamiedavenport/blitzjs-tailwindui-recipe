@@ -13,6 +13,13 @@
     "jscodeshift": "0.11.0"
   },
   "devDependencies": {
-    "@types/jscodeshift": "^0.7.1"
+    "@types/jest": "^26.0.14",
+    "@types/jscodeshift": "^0.7.1",
+    "jest": "^26.5.2",
+    "ts-jest": "^26.4.1",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

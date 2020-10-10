@@ -2,6 +2,7 @@ import { RecipeBuilder, paths, addImport } from "@blitzjs/installer";
 import { join } from "path";
 import j from "jscodeshift";
 import { Collection } from "jscodeshift/src/Collection";
+import addInter from "./transforms/addInter";
 
 import pkg from "./package.json";
 
@@ -54,36 +55,6 @@ These config files can be extended for additional customization, but for now we'
     stepName: "Add Inter Font",
     explanation: `Tailwind UI examples are built with the Inter font so we'll add it here to ensure your app has the same look and feel`,
     singleFileSearch: paths.document(),
-    transform(program: Collection<j.Program>) {
-      program.findJSXElements("DocumentHead").replaceWith((nodePath) => {
-        return j.jsxElement(
-          j.jsxOpeningElement(j.jsxIdentifier("DocumentHead")),
-          j.jsxClosingElement(j.jsxIdentifier("DocumentHead")),
-          [
-            j.jsxText("\n"),
-            j.jsxElement(
-              j.jsxOpeningElement(
-                j.jsxIdentifier("link"),
-                [
-                  j.jsxAttribute(
-                    j.jsxIdentifier("rel"),
-                    j.literal("stylesheet")
-                  ),
-                  j.jsxAttribute(
-                    j.jsxIdentifier("href"),
-                    j.literal("https://rsms.me/inter/inter.css")
-                  ),
-                ],
-                true
-              ),
-              null,
-              []
-            ),
-            j.jsxText("\n"),
-          ]
-        );
-      });
-      return program;
-    },
+    transform: addInter,
   })
   .build();
